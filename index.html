@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+ <style>
+     *{
+    color: white;
+}
+#input1,#input2{
+    width: 250px;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    background-image: linear-gradient(-90deg,red,rgb(93, 92, 92));
+    color: white;
+}
+#input1::-webkit-outer-spin-button,
+#input1::-webkit-inner-spin-button,#input2::-webkit-outer-spin-button,
+#input2::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.calculator{
+   
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5em;
+   display: flex;
+   flex-direction: column;
+   gap: 1em;
+}
+h1,h2{
+    font-family: umbf;
+}
+#output{
+    width: 100px;
+    height: 30px;
+    border: none;
+    color: red;
+    text-align: center;
+}
+
+body{
+    justify-content: center;
+    position: relative;
+    align-items: center;
+}
+input{
+    font-family: cursive;
+    font-weight: bolder;
+    font-size: 20px;
+    text-align: center;
+}
+.out{
+    align-items: center;
+    margin: 30%;
+    margin-top: 12%;
+}
+button{
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    font-family: cursive;
+    transition: box-shadow 500ms;
+    color: black;
+}
+button:hover{
+    box-shadow: 3px 3px 5px white;
+}
+ </style>
+</head>
+<body>
+    <div class="out">
+        <div class="calculator">
+            <h1>BMI Calculator</h1>
+            <input type="number" id="input2" class="weight" placeholder="Enter your Weight in kG">
+            <input type="number" id="input1" class="height" placeholder="Enter your Height in cm">
+            <button onclick="calculateBMI()">Calculate</button>
+            <div id="output"></div>
+        </div>
+    </div>
+<script>
+    function calculateBMI(){
+        let weight=Number(document.getElementById("input2").value)
+        let height=Number(document.getElementById("input1").value)
+        let bmi=(weight/((height**2)))
+        document.getElementById("output").innerHTML=bmi+" kg/m<sup>2</sup>"
+    }
+</script>
+
+</body>
+</html>
